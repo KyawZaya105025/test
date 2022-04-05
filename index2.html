@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+ 
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("snow.gif");
+  z-index: 99;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bg-image {
+  /* The image used */
+  background-image: url("vegp.gif");
+  
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  
+  /* Full height */
+  height: 600px; 
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 1px solid goldenrod;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* z-index: 2; */
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+.container{
+    width: 100%;
+    height: 600px;
+    background-color: #efefef;
+
+}
+</style>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="bootstrap.min.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+<!-- link files -->
+<script src="jquery.js"></script>
+<script src="popper.js"></script>
+<script src="bootstrap.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<!-- Start Home and Nav -->
+
+<!-- Initiate AOS animation -->
+<script>
+  AOS.init({
+    duration: 1500,
+  });
+</script>
+
+
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <img src="mylogo.png" alt="Logo" id="logo" data-aos="fade-left"
+    data-aos-anchor="#example-anchor"
+    data-aos-offset="500"
+    data-aos-duration="500">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto ml-auto" data-aos="zoom-in">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#promotion">Promotions</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Menu
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #fa9b5c;">
+            <a class="dropdown-item" href="#menu-p">Pizza  <span class="badge badge-success"> 6</span> </a>
+            <a class="dropdown-item" href="#menu-de">Dessert  <span class="badge badge-success"> 6</span></a>
+            <a class="dropdown-item" href="#menu-dr">Drink  <span class="badge badge-success"> 6</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#about">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#footer">Feedback <span class="badge badge-primary">6</span></a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav>
+<div id="back">
+  <div class="bg-image"></div>
+
+<div class="bg-text">
+  
+  <h2 id="pizzahouse" data-aos="flip-up">KZY Pizza House</h2>
+  <p data-aos="flip-up">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+
+</div> 
+<!-- Start Popup -->
+<div id="popup" class="text-center justify-content-center">
+  
+  <button data-aos="fade-down" type="button" class="btn btn-warning btn-block btn-lg" data-toggle="modal" data-target="#exampleModal">
+    Promotion <span class="badge badge-pill badge-dark">50% off</span></button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content bg-warning">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">50% Off Promotion</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img src="promotion.gif" alt="promotion" class="card-img"><br>
+          <p class="text-dark pt-3 text-left">မြန်မာနိုင်ငံမှာလက်ရှိဖြစ်ပေါ်နေတဲ့အခြေအနေတွေကြောင့် <mark>KZY Pizza House</mark> မှတစ်ဆင့်လိုအပ်နေတဲ့နေရာတွေကို ကူညီပြီးလိုက်လံထောက်ပံ့လျက်ရှိပါတယ်။ မိတ်ဆွေကိုလည်း တစ်စိတ်တစ်ပိုင်းပါဝင်ဖို့တိုက်တွန်းအပ်ပါတယ်။</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+</div>
+</div>
+<!-- End Home and nav -->
+
+<!-- Start Promotion -->
+<section id="promotion">
+  <h1 class="htwo text-center" data-aos="zoom-out"><b> Promotion Items</b></h1>
+  <div class="row justify-content-center">
+    <div class="card col-md-3 pl-0 pr-0">
+      <img class="card-img-top" src="cheesep.gif" alt="Card image cap" data-aos="zoom-in">
+      <div class="card-body">
+        <h5 class="card-title">Vegan Pizza</h5>
+        <p class="card-text">(From <mark> June 15 to June 30</mark>)</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item bg-secondary text-light"><strike><i>24000 MMK</i></strike>&nbsp;&nbsp;<span class="badge badge-pill badge-warning">50% off</span> </li>
+        <li class="list-group-item bg-warning"><b>14000 MMK</b></li>
+      </ul>
+    </div>
+    <div class="card col-md-3 pl-0 pr-0">
+      <img class="card-img-top" src="veganp.gif" alt="Card image cap" data-aos="zoom-in">
+      <div class="card-body">
+        <h5 class="card-title">Cheese Pizza</h5>
+        <p class="card-text">(From <mark> June 15 to June 30</mark>)</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item bg-secondary text-light"><strike><i>30000 MMK</i></strike>&nbsp;&nbsp;<span class="badge badge-pill badge-warning">50% off</span></li>
+        <li class="list-group-item bg-warning"><b>15000 MMK</b></li>
+      </ul>
+    </div>
+    <div class="card col-md-3 pl-0 pr-0">
+      <img class="card-img-top" src="seafood.gif" alt="Card image cap" data-aos="zoom-in">
+      <div class="card-body">
+        <h5 class="card-title">Seafood Pizza</h5>
+        <p class="card-text">(From <mark> June 15 to June 30</mark>)</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item bg-secondary text-light"><strike><i>32000 MMK</i></strike>&nbsp;&nbsp;<span class="badge badge-pill badge-warning">50% off</span></li>
+        <li class="list-group-item bg-warning"><b>16000 MMK</b></li>
+      </ul>
+    </div>
+  </div>
+</section>
+<!-- End Promotion -->
+
+<!-- Start Menu / pizza-->
+<section id="menu-p">
+  <h1 class="htwo text-center" data-aos="zoom-out"><b>Pizza</b></h1>
+<div class="row justify-content-center">
+  <div class="card col-md-3 pl-0 pr-0">
+    <img class="card-img-top" src="./pic1.jpg" alt="Card image cap" data-aos="zoom-in">
+    <div class="card-body">
+      <h5 class="card-title" data-aos="zoom-in">Seafood Pizza</h5>
+      <p class="card-text" data-aos="zoom-in"><mark>32000 MMK</mark></p>
+      <!-- Button trigger modal -->
+<button type="button" data-aos="zoom-in" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter">
+  Add to Cart
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+      <p class="text-success"><b>1 new item(s) have been added to your cart</b></p>
+      <img class="card-img-top h-auto" src="./pic1.jpg" alt="Card image cap">
+      <h5 class="card-title">Seafood Pizza</h5>
+      <p class="card-text"><mark>32000 MMK</mark></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" onclick="not()" data-dismiss="modal">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+
+  <div class="card col-md-3 pl-0 pr-0">
+    <img class="card-img-top" src="pizza/cheese2.jpg" alt="Card image cap" data-aos="zoom-in">
+    <div class="card-body">
+      <h5 class="card-title" data-aos="zoom-in">Cheese Pizza</h5>
+      <p class="card-text" data-aos="zoom-in"><mark>25000 MMK</mark></p>
+      <!-- Button trigger modal -->
+<button type="button" data-aos="zoom-in" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter2">
+  Add to Cart
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+      <p class="text-success"><b>1 new item(s) have been added to your cart.</b></p>
+      <img class="card-img-top h-auto" src="pizza/cheese2.jpg" alt="Card image cap">
+      <h5 class="card-title">Cheese Pizza</h5>
+      <p class="card-text"><mark>32000 MMK</mark></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" onclick="not()" data-dismiss="modal">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+
+  <div class="card col-md-3 pl-0 pr-0">
+    <img class="card-img-top" src="pizza/chicken.jpg" alt="Card image cap" data-aos="zoom-in">
+    <div class="card-body">
+      <h5 class="card-title" data-aos="zoom-in">Chicken Pizza</h5>
+      <p class="card-text" data-aos="zoom-in"><mark>28000 MMK</mark></p>
+      <!-- Button trigger modal -->
+<button type="button" data-aos="zoom-in" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter3">
+  Add to Cart
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+      <p class="text-success"><b>1 new item(s) have been added to your cart</b></p>
+      <img class="card-img-top h-auto" src="pizza/chicken.jpg" alt="Card image cap">
+      <h5 class="card-title">Chicken Pizza</h5>
+      <p class="card-text"><mark>32000 MMK</mark></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" onclick="not()" data-dismiss="modal">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+
+  <div class="card col-md-3 pl-0 pr-0">
+    <img class="card-img-top" src="pizza/cheese.jpg" alt="Card image cap" data-aos="zoom-in">
+    <div class="card-body">
+      <h5 class="card-title" data-aos="zoom-in">Cheese Pizza</h5>
+      <p class="card-text" data-aos="zoom-in"><mark>32000 MMK</mark></p>
+      <!-- Button trigger modal -->
+<button type="button" data-aos="zoom-in" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter4">
+  Add to Cart
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter4" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+      <p class="text-success"><b>1 new item(s) have been added to your cart</b></p>
+      <img class="card-img-top h-auto" src="pizza/cheese.jpg" alt="Card image cap">
+      <h5 class="card-title">Cheese Pizza</h5>
+      <p class="card-text"><mark>32000 MMK</mark></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" onclick="not()" data-dismiss="modal">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+
+  <div class="card col-md-3 pl-0 pr-0">
+    <img class="card-img-top" src="pizza/vegan.jpg" alt="Card image cap" data-aos="zoom-in">
+    <div class="card-body">
+      <h5 class="card-title" data-aos="zoom-in">Vegan Pizza</h5>
+      <p class="card-text" data-aos="zoom-in"><mark>32000 MMK</mark></p>
+      <!-- Button trigger modal -->
+<button type="button" data-aos="zoom-in" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter5">
+  Add to Cart
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter5" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+      <p class="text-success"><b>1 new item(s) have been added to your cart</b></p>
+      <img class="card-img-top h-auto" src="pizza/vegan.jpg" alt="Card image cap">
+      <h5 class="card-title">Vegan Pizza</h5>
+      <p class="card-text"><mark>32000 MMK</mark></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" onclick="not()" data-dismiss="modal">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+
+  <div class="card col-md-3 pl-0 pr-0">
+    <img class="card-img-top" src="pizza/vegan2.jpg" alt="Card image cap" data-aos="zoom-in">
+    <div class="card-body">
+      <h5 class="card-title" data-aos="zoom-in">Vegan Pizza</h5>
+      <p class="card-text" data-aos="zoom-in"><mark>26000 MMK</mark></p>
+      <!-- Button trigger modal -->
+<button type="button" data-aos="zoom-in" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter6">
+  Add to Cart
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter6" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+      <p class="text-success"><b>1 new item(s) have been added to your cart</b></p>
+      <img class="card-img-top h-auto" src="pizza/vegan2.jpg" alt="Card image cap">
+      <h5 class="card-title">Vegan Pizza</h5>
+      <p class="card-text"><mark>26000 MMK</mark></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" onclick="not()" data-dismiss="modal">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+</div>
+</section>
+<!-- End Menu -->
+
+<!-- Start Menu / dessert-->
+<section id="menu-de">
+  <h1 class="htwo text-center" data-aos="zoom-out"><b>Dessert</b></h1>
+<div class="row justify-content-center">
+  <div class="card col-md-3 pl-0 pr-0">
+    <img class="card-img-top" src="dessert/brownie.gif" alt="Card image cap" data-aos="zoom-in">
+    <div class="card-body">
+      <h5 class="card-title" data-aos="zoom-in">Brownie</h5>
+      <p class="card-text" data-aos="zoom-in"><mark>1500 MMK</mark></p>
+      <!-- Button trigger modal -->
+<button type="button" data-aos="zoom-in" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter12">
+  Add to Cart
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter12" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+      <p class="text-success"><b>1 new item(s) have been added to your cart</b></p>
+      <img class="card-img-top h-auto" src="dessert/brownie.gif" alt="Card image cap">
+      <h5 class="card-title">Brownie</h5>
+      <p class="card-text"><mark>1500 MMK</mark></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" onclick="not()" data-dismiss="modal">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+
+  <div class="card col-md-3 pl-0 pr-0">
+    <img class="card-img-top" src="dessert/pudim.gif" alt="Card image cap" data-aos="zoom-in">
+    <div class="card-body">
+      <h5 class="card-title" data-aos="zoom-in">Pudim</h5>
+      <p class="card-text" data-aos="zoom-in"><mark>1000 MMK</mark></p>
+      <!-- Button trigger modal -->
+<button type="button" data-aos="zoom-in" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter13">
+  Add to Cart
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter13" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+      <p class="text-success"><b>1 new item(s) have been added to your cart</b></p>
+      <img class="card-img-top h-auto" src="dessert/pudim.gif" alt="Card image cap">
+      <h5 class="card-title">Pudim</h5>
+      <p class="card-text"><mark>1000 MMK</mark></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" onclick="not()" data-dismiss="modal">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+
+  <div class="card col-md-3 pl-0 pr-0">
+    <img class="card-img-top" src="dessert/choco.gif" alt="Card image cap" data-aos="zoom-in">
+    <div class="card-body">
+      <h5 class="card-title" data-aos="zoom-in">Chocolate cake</h5>
+      <p class="card-text" data-aos="zoom-in"><mark>3000 MMK</mark></p>
+      <!-- Button trigger modal -->
+<button type="button" data-aos="zoom-in" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter14">
+  Add to Cart
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter14" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+      <p class="text-success"><b>1 new item(s) have been added to your cart</b></p>
+      <img class="card-img-top h-auto" src="dessert/choco.gif" alt="Card image cap">
+      <h5 class="card-title">Chocolate cake</h5>
+      <p class="card-text"><mark>30000 MMK</mark></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" onclick="not()" data-dismiss="modal">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+
+  <div class="card col-md-3 pl-0 pr-0">
+    <img class="card-img-top" src="dessert/donut.gif" alt="Card image cap" data-aos="zoom-in">
+    <div class="card-body">
+      <h5 class="card-title" data-aos="zoom-in">Donut</h5>
+      <p class="card-text" data-aos="zoom-in"><mark>700 MMK</mark></p>
+      <!-- Button trigger modal -->
+<button type="button" data-aos="zoom-in" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter15">
+  Add to Cart
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter15" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+      <p class="text-success"><b>1 new item(s) have been added to your cart</b></p>
+      <img class="card-img-top h-auto" src="dessert/donut.gif" alt="Card image cap">
+      <h5 class="card-title">Donut</h5>
+      <p class="card-text"><mark>700 MMK</mark></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" onclick="not()" data-dismiss="modal">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+
+  <div class="card col-md-3 pl-0 pr-0">
+    <img class="card-img-top" src="dessert/eclair.gif" alt="Card image cap" data-aos="zoom-in">
+    <div class="card-body">
+      <h5 class="card-title" data-aos="zoom-in">Eclair</h5>
+      <p class="card-text" data-aos="zoom-in"><mark>300 MMK</mark></p>
+      <!-- Button trigger modal -->
+<button type="button" data-aos="zoom-in" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter16">
+  Add to Cart
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter16" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+      <p class="text-success"><b>1 new item(s) have been added to your cart</b></p>
+      <img class="card-img-top h-auto" src="dessert/eclair.gif" alt="Card image cap">
+      <h5 class="card-title">Eclair</h5>
+      <p class="card-text"><mark>300 MMK</mark></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" onclick="not()" data-dismiss="modal">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+
+  <div class="card col-md-3 pl-0 pr-0">
+    <img class="card-img-top" src="dessert/icecram.gif" alt="Card image cap" data-aos="zoom-in">
+    <div class="card-body">
+      <h5 class="card-title" data-aos="zoom-in">icecram</h5>
+      <p class="card-text" data-aos="zoom-in"><mark>2500 MMK</mark></p>
+      <!-- Button trigger modal -->
+<button type="button" data-aos="zoom-in" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter17">
+  Add to Cart
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter17" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+      <p class="text-success"><b>1 new item(s) have been added to your cart</b></p>
+      <img class="card-img-top h-auto" src="dessert/icecram.gif" alt="Card image cap">
+      <h5 class="card-title">Icecram</h5>
+      <p class="card-text"><mark>2500 MMK</mark></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" onclick="not()" data-dismiss="modal">Confirm</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  </div>
+
+</div>
+</section>
+<!-- End Menu -->
+
+<!-- Start Menu / drink-->
+<section id="menu-dr">
+  <h1 class="htwo text-center" data-aos="zoom-out"><b>Drink</b></h1>
+  <div class="row justify-content-center">
+    <div class="card col-md-3 pl-0 pr-0">
+      <img class="card-img-top" src="drink/pepsi.gif" alt="Card image cap" data-aos="zoom-in">
+      <div class="card-body">
+        <h5 class="card-title" data-aos="zoom-in">Pepsi</h5>
+        <p class="card-text" data-aos="zoom-in"><mark>2000 MMK</mark></p>
+        <!-- Button trigger modal -->
+  <button type="button" data-aos="zoom-in" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter22">
+    Add to Cart
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter22" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+        <p class="text-success"><b>1 new item(s) have been added to your cart</b></p>
+        <img class="card-img-top h-auto" src="drink/pepsi.gif" alt="Card image cap">
+        <h5 class="card-title">Pepsi</h5>
+        <p class="card-text"><mark>2000 MMK</mark></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success" onclick="not()" data-dismiss="modal">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+    </div>
+  
+    <div class="card col-md-3 pl-0 pr-0">
+      <img class="card-img-top" src="drink/cola.gif" alt="Card image cap" data-aos="zoom-in">
+      <div class="card-body">
+        <h5 class="card-title" data-aos="zoom-in">Coca Cola</h5>
+        <p class="card-text" data-aos="zoom-in"><mark>1800 MMK</mark></p>
+        <!-- Button trigger modal -->
+  <button type="button" data-aos="zoom-in" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter23">
+    Add to Cart
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter23" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+        <p class="text-success"><b>1 new item(s) have been added to your cart</b></p>
+        <img class="card-img-top h-auto" src="drink/cola.gif" alt="Card image cap">
+        <h5 class="card-title">Coca Cola</h5>
+        <p class="card-text"><mark>1800 MMK</mark></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success" onclick="not()" data-dismiss="modal">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+    </div>
+  
+    <div class="card col-md-3 pl-0 pr-0">
+      <img class="card-img-top" src="drink/tesco.gif" alt="Card image cap" data-aos="zoom-in">
+      <div class="card-body">
+        <h5 class="card-title" data-aos="zoom-in">Tesco Orange Juice</h5>
+        <p class="card-text" data-aos="zoom-in"><mark>3000 MMK</mark></p>
+        <!-- Button trigger modal -->
+  <button type="button" data-aos="zoom-in" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter24">
+    Add to Cart
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter24" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+        <p class="text-success"><b>1 new item(s) have been added to your cart</b></p>
+        <img class="card-img-top h-auto" src="drink/tesco.gif" alt="Card image cap">
+        <h5 class="card-title">Tesco Orange Juice</h5>
+        <p class="card-text"><mark>30000 MMK</mark></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success" onclick="not()" data-dismiss="modal">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+    </div>
+  
+    <div class="card col-md-3 pl-0 pr-0">
+      <img class="card-img-top" src="drink/coffee.gif" alt="Card image cap" data-aos="zoom-in">
+      <div class="card-body">
+        <h5 class="card-title" data-aos="zoom-in">Coffee</h5>
+        <p class="card-text" data-aos="zoom-in"><mark>700 MMK</mark></p>
+        <!-- Button trigger modal -->
+  <button type="button" data-aos="zoom-in" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter25">
+    Add to Cart
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter25" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+        <p class="text-success"><b>1 new item(s) have been added to your cart</b></p>
+        <img class="card-img-top h-auto" src="drink/coffee.gif" alt="Card image cap">
+        <h5 class="card-title">Coffee</h5>
+        <p class="card-text"><mark>700 MMK</mark></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success" onclick="not()" data-dismiss="modal">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+    </div>
+  
+    <div class="card col-md-3 pl-0 pr-0">
+      <img class="card-img-top" src="drink/beer.gif" alt="Card image cap" data-aos="zoom-in">
+      <div class="card-body">
+        <h5 class="card-title" data-aos="zoom-in">Beer</h5>
+        <p class="card-text" data-aos="zoom-in"><mark>4000 MMK</mark></p>
+        <!-- Button trigger modal -->
+  <button type="button" data-aos="zoom-in" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter26">
+    Add to Cart
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter26" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+        <p class="text-success"><b>1 new item(s) have been added to your cart</b></p>
+        <img class="card-img-top h-auto" src="drink/beer.gif" alt="Card image cap">
+        <h5 class="card-title">Beer</h5>
+        <p class="card-text"><mark>4000 MMK</mark></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success" onclick="not()" data-dismiss="modal">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+    </div>
+  
+    <div class="card col-md-3 pl-0 pr-0">
+      <img class="card-img-top" src="drink/milk.gif" alt="Card image cap" data-aos="zoom-in">
+      <div class="card-body">
+        <h5 class="card-title" data-aos="zoom-in">Chocolate Milk</h5>
+        <p class="card-text" data-aos="zoom-in"><mark>3500 MMK</mark></p>
+        <!-- Button trigger modal -->
+  <button type="button" data-aos="zoom-in" class="btn btn-success btn-block" data-toggle="modal" data-target="#exampleModalCenter27">
+    Add to Cart
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter27" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+        <p class="text-success"><b>1 new item(s) have been added to your cart</b></p>
+        <img class="card-img-top h-auto" src="drink/milk.gif" alt="Card image cap">
+        <h5 class="card-title">Chocolate Milk</h5>
+        <p class="card-text"><mark>3500 MMK</mark></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success" onclick="not()" data-dismiss="modal">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+    </div>
+  
+  </div>
+</div>
+</section>
+<!-- End Menu -->
+
+<!-- Start About us -->
+<section id="about">
+  <h1 class="htwo text-center" data-aos="zoom-out"><b>About Us</b></h1>
+  <div class="row justify-content-center">
+<div class="card col-md-10 pl-0 pr-0">
+  <img src="about.png" alt="About us" id="aboutpic" data-aos="zoom-in">
+</div>
+</div>
+</section>
+<!-- End About us -->
+
+<!-- Start Feedback / Footer  -->
+<footer id="footer">
+  <div class="row justify-content-center mb-0 pb-0">
+  <div class="card col-md-12 text-center">
+    <div class="card-header bg-white">
+      <h1 class="m-0 p-0" data-aos="zoom-out">Feedback</h1>
+    </div>
+    <div class="card-body bg-white pb-0 p-0">
+     <div class="row justify-content-center pb-0">
+       <div class="card col-md-5 border-0 bg-light m-0"> 
+        <img src="feedback.gif" alt="" class="h-auto" data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-offset="500" data-aos-duration="500">
+        <p data-aos="zoom-in">We would like your feedback to improve our website.<br>What is your opinion of this page?</p>
+       </div>
+       <div class="card col-md-5 h-auto text-left border-0 m-0" style="height: 200px; background-color: #efefef">
+        <form>
+          <div class="form-group">
+            <label for="exampleInputEmail1" data-aos="zoom-in-down">Email address</label>
+            <input type="email" data-aos="zoom-in-down" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          </div>
+          <div class="form-group">
+            <label for="inputAddress" data-aos="zoom-in-down" >Address</label>
+            <input type="text" data-aos="zoom-in-down" class="form-control" id="inputAddress" placeholder="Enter Your Address">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1" data-aos="zoom-in-down">Comment</label>
+            <textarea class="form-control" data-aos="zoom-in-down" rows="5" id="comment" placeholder="Please leave your feedback..."></textarea>
+          </div><br>
+          <button type="submit" onclick="not()" class="btn btn-primary btn-block">Send</button>
+        </form>
+      </div>
+     </div>
+    </div>
+    <div class="card-footer" id="cardfooter">
+      <p>Copyright ©2022 All rights reserved by <span><img src="logo.png" alt="KZY" id="footerlogo"></span></p>
+    </div>
+  </div>
+</div>
+</footer>
+<!-- End Feedback -->
+<script>
+  function not(){
+    alert("Not Available Now.Sorry!")
+  }
+</script>
+</body>
+</html>
